@@ -15,6 +15,7 @@ end)
 
 minetest.register_chatcommand("add_name", {
     params = "<string>",
+    privs = {server= true},
     description = "adds a name to banlist\nCAUTION adding a single letter can be catastrophic. always be careful when adding names",
     func = function(name,param)
         if param ~= "" then
@@ -32,11 +33,21 @@ minetest.register_chatcommand("add_name", {
     end
 })
 
-minetest.register_chatcommand("show", {
-    description = "shower",
+minetest.register_chatcommand("list_names", {
+    description = "lists all the banned names",
+    privs = {server= true},
     func= function(name)
        for k,v in pairs(banned_names) do
         minetest.chat_send_player(name, banned_names[k])
        end
     end
 })
+--[[
+minetest.register_chatcommand("rm-name",{
+    description - "removes a  name from the ban list",
+    params = "<name>",
+    func = function(name, param)
+        
+    end
+
+}) ]]--
