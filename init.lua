@@ -36,8 +36,7 @@ minetest.register_chatcommand("show", {
     description = "shower",
     func= function(name)
        for k,v in pairs(banned_names) do
-        print(banned_names[k]..",")
-        end
-       print(";")
+        minetest.chat_send_player(name, banned_names[k])
+       end
     end
 })
