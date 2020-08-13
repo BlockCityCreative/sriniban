@@ -43,7 +43,7 @@ minetest.register_chatcommand("list_names", {
 })
 
 minetest.register_chatcommand("rm-name",{
-    description - "removes a  name from the ban list",
+    description = "removes a  name from the ban list",
     params = "<name>",
     privs = {server=true},
     func = function(name, param)
