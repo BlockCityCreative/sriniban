@@ -26,8 +26,7 @@ minetest.register_chatcommand("add_name", {
             storage:set_string("banned_names", serial_table)    
         
         else 
-            
-        
+            minetest.chat_send_player(name, "Captain Spock tells us that expexted to add a new banned word without an argument is senseless")
         end
     
     end
@@ -38,16 +37,24 @@ minetest.register_chatcommand("list_names", {
     privs = {server= true},
     func= function(name)
        for k,v in pairs(banned_names) do
-        minetest.chat_send_player(name, banned_names[k])
+            minetest.chat_send_player(name, banned_names[k])
        end
     end
 })
---[[
+
 minetest.register_chatcommand("rm-name",{
     description - "removes a  name from the ban list",
     params = "<name>",
+    privs = {server=true},
     func = function(name, param)
-        
+        if param ~="" then    
+            for k in pairs(banned_names) do
+                if param == banned_names[k] then
+                    table.remove(banned_names,k)
+                end   
+            end
+            storage:set_string("banned_names", minetest.serialize(banned_names))
+        end
     end
 
-}) ]]--
+})
