@@ -26,7 +26,7 @@ minetest.register_chatcommand("add_name", {
             storage:set_string("banned_names", serial_table)    
         
         else 
-            minetest.chat_send_player(name, "Captain Spock tells us that expexted to add a new banned word without an argument is senseless")
+            minetest.chat_send_player(name, "Captain Spock tells us that expexting to add a new banned word without specefying it is senseless")
         end
     
     end
