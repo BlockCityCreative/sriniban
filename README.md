@@ -6,3 +6,7 @@ minetest mod that blocks people with disallowed words in their name from joining
   2) View banlist. /list_names . Lists all words in banlist
   
   3) Remove a word from banlist. `/rm_name <name>` . Note, this command needs the exact name to be inputted, any capitalizations will **not** be ignored
+  
+# LICENCE
+
+This program is released under the **MIT** Licence.
