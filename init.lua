@@ -52,7 +52,7 @@ minetest.register_chatcommand("list_names", {
     end
 })
 
-minetest.register_chatcommand("rm-name",{
+minetest.register_chatcommand("rm_name",{
     description = "removes a  name from the ban list",
     params = "<name>",
     privs = {server=true},
